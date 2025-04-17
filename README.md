@@ -5,3 +5,4 @@
 - GitHub
 - AWS (EKS, S3, IAM)
 - DockerHub
+- Terraform
