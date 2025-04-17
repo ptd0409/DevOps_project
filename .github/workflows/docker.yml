@@ -24,7 +24,7 @@ jobs:
     - name: Build and Push
       uses: docker/build-push-action@v5
       with:
-        context: ./app.api
-        file: ./app.api/app.dockerfile
+        context: ./DevOps_project/app.api
+        file: ./DevOps_project/app.api/app.dockerfile
         push: true
         tags: ptd0409/max-weather-api:${{ github.ref_name }}
