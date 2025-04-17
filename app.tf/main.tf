@@ -26,6 +26,7 @@ module "eks" {
   cluster_version = "1.28"
   subnet_ids      = module.vpc.private_subnets
   vpc_id          = module.vpc.vpc_id
+  cluster_endpoint_public_access = true
 
   eks_managed_node_groups = {
     dev = {
