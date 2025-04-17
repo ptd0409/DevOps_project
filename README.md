@@ -8,3 +8,4 @@
 - Terraform
 
 ### Step 1: Provision Infrastructure with Terraform
+- Created VPC, subnets, and EKS cluster (`max-weather-cluster`)
