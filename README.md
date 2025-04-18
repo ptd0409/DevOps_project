@@ -19,6 +19,7 @@
   - Build Docker image
   - Tag it by branch name (`dev`, `main`)
   - Push to private DockerHub repo: [`ptd0409/max-weather-api`](https://hub.docker.com/repository/docker/ptd0409/max-weather-api)
+  - Create secrets (Go to project -> Settings -> Secrets and variables): AWS_ACCESS_KEY_ID, AWS_REGION, AWS_SECRET_ACCESS_KEY, DOCKERHUB_TOKEN, DOCKER_USERNAME, EKS_CLUSTER_NAME
 
 ### Step 3: Deploy to EKS via CI/CD
 - Added Kubernetes manifests (`k8s/deployment.yaml`, `service.yaml`)
