@@ -29,4 +29,3 @@
   - Deploys to namespace `dev`, `main`
   - Applies manifests using `kubectl`
 
----
