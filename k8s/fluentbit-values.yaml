@@ -1,0 +1,16 @@
+serviceAccount:
+  create: false
+  name: fluent-bit
+
+awsRegion: ap-southeast-1
+
+output:
+  cloudwatch:
+    enabled: true
+    region: ap-southeast-1
+    logGroupName: /eks/fluentbit/logs
+    logStreamPrefix: fluentbit-
+  elasticsearch:
+    enabled: false
+
+

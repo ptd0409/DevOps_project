@@ -45,3 +45,25 @@ module "eks" {
     "Terraform"   = "true"
   }
 }
+
+module "fluentbit_irsa" {
+  source  = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
+  version = "5.34.0"
+
+  role_name = "fluentbit-irsa"
+  oidc_providers = {
+    main = {
+      provider_arn               = module.eks.oidc_provider_arn
+      namespace_service_accounts = ["kube-system:fluent-bit"]
+    }
+  }
+  tags = {
+    "Environment" = "dev"
+    "Terraform"   = "true"
+  }
+}
+
+resource "aws_iam_role_policy_attachment" "fluentbit_logs" {
+  role       = module.fluentbit_irsa.iam_role_name
+  policy_arn = "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
+}
