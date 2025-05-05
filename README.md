@@ -9,6 +9,7 @@
 
 ### Step 1: Provision Infrastructure with Terraform
 - Created VPC, subnets, and EKS cluster (`max-weather-cluster`)
+- Run command 'aws eks --region ap-southeast-1 update-kubeconfig --name max-weather-cluster' after 'terraform apply --auto-approve'
 - Used S3 for storing Terraform state
 - Used `terraform-aws-modules/eks` and `vpc` modules
 - Provide EKS public API endpoint for only local IP
