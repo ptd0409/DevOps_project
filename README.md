@@ -8,6 +8,7 @@
 - Terraform
 
 ### Step 1: Provision Infrastructure with Terraform
+- Go to IAM -> User -> Create access key
 - Run: aws configure
 - Created VPC, subnets, and EKS cluster (`max-weather-cluster`)
 - Run command 'aws eks --region ap-southeast-1 update-kubeconfig --name max-weather-cluster' after 'terraform apply --auto-approve'
