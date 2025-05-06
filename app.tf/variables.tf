@@ -3,7 +3,7 @@ variable "aws_region" {
 }
 
 variable "cluster_name" {
-  default = "max-weather-cluster"
+  default = "tien-dung-cluster"
 }
 
 variable "vpc_cidr" {
