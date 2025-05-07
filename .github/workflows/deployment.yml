@@ -27,7 +27,7 @@ jobs:
         context: ./app.api
         file: ./app.api/app.dockerfile
         push: true
-        tags: ptd0409/max-weather-api:${{ github.ref_name }}
+        tags: ptd0409/tien-dung-api:${{ github.ref_name }}
   deploy:
     needs: docker-build
     runs-on: ubuntu-latest

@@ -1,7 +1,7 @@
 # Replace with your values:
 awsprofile=default
 awsregion=ap-southeast-1
-eksclustername=max-weather-cluster
+eksclustername=tien-dung-cluster
 # # 1. Create namespace
 kubectl apply -f https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/cloudwatch-namespace.yaml
 
@@ -19,9 +19,10 @@ kubectl create configmap fluent-bit-cluster-info \
 --from-literal=read.tail=${FluentBitReadFromTail} \
 --from-literal=logs.region=${awsregion} -n amazon-cloudwatch
 
-kubectl apply -f https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/fluent-bit/fluent-bit.yaml
+kubectl apply -f k8s/fluentbit.yaml
+#https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/fluent-bit/fluent-bit.yaml
 
-DASHBOARD_NAME=your_cw_dashboard_name
+DASHBOARD_NAME=tien-dung-dashboard
 REGION_NAME=your_metric_region_such_as_us-west-1
 CLUSTER_NAME=your_kubernetes_cluster_name
 
