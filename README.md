@@ -10,8 +10,11 @@
 ### Step 1: Provision Infrastructure with Terraform
 - Go to IAM -> User -> Create access key
 - Run: aws configure
-- Created VPC, subnets, and EKS cluster (`max-weather-cluster`)
 - Run command 'aws eks --region ap-southeast-1 update-kubeconfig --name max-weather-cluster' after 'terraform apply --auto-approve'
+- Before applying this repo: https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/fluent-bit/fluent-bit.yaml, download and modify the name of serviceaccount. Or:
+- Run: kubectl patch daemonset fluent-bit -n amazon-cloudwatch \
+  -p '{"spec": {"template": {"spec": {"serviceAccountName": "fluentbit-irsa"}}}}'
+- Run bash script, remember to change cluster name if needed
 - Used S3 for storing Terraform state
 - Used `terraform-aws-modules/eks` and `vpc` modules
 - Provide EKS public API endpoint for only local IP
