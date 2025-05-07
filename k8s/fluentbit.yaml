@@ -351,6 +351,6 @@ spec:
       - name: dmesg
         hostPath:
           path: /var/log/dmesg
-      serviceAccountName: fluent-bit
+      serviceAccountName: fluentbit-irsa
       nodeSelector:
         kubernetes.io/os: linux

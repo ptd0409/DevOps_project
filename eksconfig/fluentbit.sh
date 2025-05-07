@@ -19,7 +19,7 @@ kubectl create configmap fluent-bit-cluster-info \
 --from-literal=read.tail=${FluentBitReadFromTail} \
 --from-literal=logs.region=${awsregion} -n amazon-cloudwatch
 
-kubectl apply -f k8s/fluentbit.yaml
+kubectl apply -f ../k8s/fluentbit.yaml
 #https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/fluent-bit/fluent-bit.yaml
 
 DASHBOARD_NAME=tien-dung-dashboard
