@@ -28,4 +28,5 @@
 - CI/CD triggers:
   - Deploys to namespace `dev`, `main`
   - Applies manifests using `kubectl`
+- Remember to create secret for backend deployment to pull image from Docker registry
 

@@ -2,7 +2,7 @@ name: Build, Push and Deploy to Kubernetes
 
 on:
   push:
-    branches: [dev]
+    branches: [dev,main]
 
 jobs:
   docker-build:
