@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: ptd0409/max-weather-api:dev
+          image: ptd0409/tien-dung-api:main
           ports:
             - containerPort: 80
       imagePullSecrets:

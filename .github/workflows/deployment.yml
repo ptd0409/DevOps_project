@@ -60,3 +60,4 @@ jobs:
           # Deploy app
           kubectl apply -f <(envsubst < k8s/backenddeployment.yaml)
           kubectl apply -f <(envsubst < k8s/backendservice.yaml)
+          kubectl apply -f <(envsubst < k8s/ingress.yaml)
