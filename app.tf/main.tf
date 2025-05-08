@@ -54,7 +54,7 @@ module "fluentbit_irsa" {
   oidc_providers = {
     main = {
       provider_arn               = module.eks.oidc_provider_arn
-      namespace_service_accounts = ["kube-system:fluent-bit"]
+      namespace_service_accounts = ["amazon-cloudwatch:fluentbit-irsa"]
     }
   }
   tags = {
