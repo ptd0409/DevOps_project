@@ -1,0 +1,4 @@
+resources:
+  - DevOps_project/k8s/backenddeployment.yaml
+  - DevOps_project/k8s/backendservice.yaml
+  - DevOps_project/k8s/ingress.yaml
