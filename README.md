@@ -8,10 +8,15 @@
 - Terraform
 
 ### Step 1: Provision Infrastructure with Terraform
-- Created VPC, subnets, and EKS cluster (`max-weather-cluster`)
-- Used S3 for storing Terraform state
-- Used `terraform-aws-modules/eks` and `vpc` modules
+- Login to AWS -> IAM -> Users -> Create access key
+- Go to app.tf -> Run: aws configure -> Paste access key and secret key -> Run: aws sts gets-caller-identity
+- Use t2.small
+- Terraform init -> terraform apply --auto-approve -> aws eks --region ap-southeast-1 update-kubeconfig --name tien-dung-cluster --kubeconfig <path_file>
+- Modifying the cluster name -> Remember to modify the name of cluster in fluentbit.sh
+- Modifying the serviceaccount name at Serviceaccount, Clusterrolebinding, Deployment in fluentbit.yaml to match the serviceaccount name in fluentbit.sh
 - Provide EKS public API endpoint for only local IP
+***If using Kind (k8s in Docker):
+- Remove fluentd in configmap, change v2 -> 0 in (because we're not using EC2 now). Remove runlogjournal in volumemount and hostpath. Remove [FILTER] aws
 
 ### Step 2: CI/CD for Docker Image
 - Built a backend API (`main.py`) and Dockerized it
