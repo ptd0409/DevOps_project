@@ -1,7 +1,10 @@
 from fastapi import FastAPI
+from app.routers import hello
 
-app = FastAPI()
+app = FastAPI(
+    title="Simple FastAPI App",
+    description="This is a minimal FastAPI app by Dung Pham",
+    version="1.0.0"
+)
 
-@app.get("/")
-def read_root():
-    return {"message": "Hello from Pham Tien Dung"}
+app.include_router(hello.router)

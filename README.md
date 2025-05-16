@@ -17,6 +17,7 @@
 - Provide EKS public API endpoint for only local IP
 ***If using Kind (k8s in Docker):
 - Remove fluentd in configmap, change v2 -> 0 in (because we're not using EC2 now). Remove runlogjournal in volumemount and hostpath. Remove [FILTER] aws
+- After applying ingress, service, deployment -> kubectl get svc -> get the external IP -> Add to CloudFlare DNS
 
 ### Step 2: CI/CD for Docker Image
 - Built a backend API (`main.py`) and Dockerized it
