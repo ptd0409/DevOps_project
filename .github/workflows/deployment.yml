@@ -30,6 +30,7 @@ jobs:
         file: ./app.api/app.dockerfile
         push: true
         tags: ptd0409/tien-dung-api:${{ github.ref_name }}
+        no-cache: true
   deploy:
     needs: docker-build
     runs-on: ubuntu-latest
