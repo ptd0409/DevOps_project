@@ -3,8 +3,8 @@ name: Build, Push and Deploy to Kubernetes
 on:
   push:
     branches: [dev,main]
-    paths-ignore:
-      - 'app.api/**'
+    # paths-ignore:
+    #   - 'app.api/**'
 
 jobs:
   docker-build:
