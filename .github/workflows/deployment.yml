@@ -63,3 +63,4 @@ jobs:
           kubectl apply -f <(envsubst < k8s/backenddeployment.yaml)
           kubectl apply -f <(envsubst < k8s/backendservice.yaml)
           kubectl apply -f <(envsubst < k8s/ingress.yaml)
+          kubectl apply -f <(envsubst < k8s/ingress-nginx-controller.yaml)
