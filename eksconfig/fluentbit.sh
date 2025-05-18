@@ -3,7 +3,7 @@ awsprofile=default
 awsregion=ap-southeast-1
 eksclustername=tien-dung-cluster
 # # 1. Create namespace
-kubectl apply -f https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/cloudwatch-namespace.yaml
+#kubectl apply -f https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/cloudwatch-namespace.yaml
 
 # # 2. Create ConfigMap
 FluentBitHttpPort='2020'

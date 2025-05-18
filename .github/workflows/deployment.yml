@@ -61,6 +61,7 @@ jobs:
           kubectl create namespace $NAMESPACE --dry-run=client -o yaml | kubectl apply -f -
 
           # Deploy app
+          kubectl apply -f <(envsubst < k8s/namespace.yaml)
           kubectl apply -f <(envsubst < k8s/backenddeployment.yaml)
           kubectl apply -f <(envsubst < k8s/backendservice.yaml)
           kubectl apply -f <(envsubst < k8s/ingress.yaml)
