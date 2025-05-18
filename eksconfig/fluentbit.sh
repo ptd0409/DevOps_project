@@ -23,8 +23,8 @@ kubectl apply -f ../k8s/fluentbit.yaml
 #https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/daemonset/container-insights-monitoring/fluent-bit/fluent-bit.yaml
 
 DASHBOARD_NAME=tien-dung-dashboard
-REGION_NAME=your_metric_region_such_as_us-west-1
-CLUSTER_NAME=your_kubernetes_cluster_name
+REGION_NAME=ap-southeast-1
+CLUSTER_NAME=tien-dung-cluster
 
 curl https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/latest/k8s-deployment-manifest-templates/deployment-mode/service/cwagent-prometheus/sample_cloudwatch_dashboards/fluent-bit/cw_dashboard_fluent_bit.json \
 | sed "s/{{YOUR_AWS_REGION}}/${REGION_NAME}/g" \
