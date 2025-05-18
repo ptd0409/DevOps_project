@@ -16,6 +16,7 @@ spec:
       containers:
         - name: backend
           image: ptd0409/tien-dung-api:main
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
       imagePullSecrets:
